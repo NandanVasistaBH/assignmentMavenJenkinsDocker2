@@ -31,6 +31,7 @@ pipeline {
         stage("Build Docker image") {
             steps {
                 script {
+                    bat "docker rmi nandan/assignment-maven"
                     bat "docker build -t nandan/assignment-maven ."
                 }
             }

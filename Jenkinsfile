@@ -9,7 +9,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: '*/main']],
-                    userRemoteConfigs: [[url: 'https://github.com/NandanVasistaBH/mavenJenkinsDocker.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/NandanVasistaBH/assignmentMavenJenkinsDocker2.git']]
                 ])
             }
         }

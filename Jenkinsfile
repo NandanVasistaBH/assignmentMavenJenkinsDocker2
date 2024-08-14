@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     try{
-                        bat "docker rmi nandan/assignment-maven"
+                        bat "docker rmi -f nandan/assignment-maven"
                         echo "REMOVED existing docker image and building a new one"
                     }
                     catch(Exception e){

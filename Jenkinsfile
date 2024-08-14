@@ -25,12 +25,18 @@ pipeline {
         }
         stage("Pull an image to check if docker exists"){
             steps{
-                bat "docker pull mongo"
+                bat "docker pull alpine"
             }
         }
         stage("Build Docker image") {
             steps {
                 script {
+                    try{
+                        bat "docker rmi nandan/assignment-maven"
+                    }
+                    catch(Exception e){
+                        echo "Exception occurred "+e.toString()
+                    }
                     bat "docker build -t nandan/assignment-maven ."
                 }
             }

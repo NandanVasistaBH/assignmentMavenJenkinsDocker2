@@ -33,6 +33,7 @@ pipeline {
                 script {
                     try{
                         bat "docker rmi nandan/assignment-maven"
+                        echo "REMOVED existing docker image and building a new one"
                     }
                     catch(Exception e){
                         echo "Exception occurred "+e.toString()
